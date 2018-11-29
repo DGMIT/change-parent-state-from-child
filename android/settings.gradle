@@ -1,0 +1,3 @@
+rootProject.name = 'ParentProps'
+
+include ':app'
