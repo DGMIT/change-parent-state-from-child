@@ -11,6 +11,7 @@ an example for passing event &amp; params from child to parent
 
 ㅁ 부모컴포넌트 (App.js)
 <pre>
+<code>
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import Child from './Child';
@@ -41,10 +42,12 @@ export default class App extends Component<Props> {
     );
   }
 }
+  </code>
 </pre>
 
 ㅁ 자식컴포넌트 (Child.js)
 <pre>
+<code>
 import React, {Component} from 'react';
 import {
   Platform, StyleSheet, Text, View,
@@ -70,4 +73,5 @@ export default class Child extends Component<Props> {
     );
   }
 }
+  </code>
 </pre>
