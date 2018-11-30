@@ -12,37 +12,66 @@ an example for passing event &amp; params from child to parent
 ㅁ 부모컴포넌트 (App.js)
 <pre>
 <code>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">import React, {Component} from &#39;react&#39;;
-import {Text, View} from &#39;react-native&#39;;
-import Child from &#39;./Child&#39;;
+<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">React,</span> <span style="color: #d0d0d0">{Component}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react&#39;</span><span style="color: #d0d0d0">;</span>
+<span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">{Text,</span> <span style="color: #d0d0d0">View}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react-native&#39;</span><span style="color: #d0d0d0">;</span>
+<span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">Child</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;./Child&#39;</span><span style="color: #d0d0d0">;</span>
 
 
-type Props = {};
-export default class App extends Component<span style="color: #007700">&lt;Props&gt;</span> {
-  constructor(props) {
-      super(props);
-      this._onPress = this._onPress.bind(this);
+<span style="color: #d0d0d0">type</span> <span style="color: #d0d0d0">Props</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">{};</span>
+<span style="color: #6ab825; font-weight: bold">export</span> <span style="color: #6ab825; font-weight: bold">default</span> <span style="color: #6ab825; font-weight: bold">class</span> <span style="color: #d0d0d0">App</span> <span style="color: #6ab825; font-weight: bold">extends</span> <span style="color: #d0d0d0">Component&lt;Props&gt;</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #d0d0d0">constructor(props)</span> <span style="color: #d0d0d0">{</span>
+      <span style="color: #6ab825; font-weight: bold">super</span><span style="color: #d0d0d0">(props);</span>
+      <span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">._onPress</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">._onPress.bind(</span><span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">);</span>
 
-      this.state = {
-        fromChildText: 0,
-      }
-  }
+      <span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.state</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">{</span>
+        <span style="color: #d0d0d0">fromChildText:</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">,</span>
+      <span style="color: #d0d0d0">}</span>
+  <span style="color: #d0d0d0">}</span>
 
-  _onPress = (pText) =&gt; {
-    this.setState({ fromChildText: pText });
-  }
+  <span style="color: #d0d0d0">_onPress</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">(pText)</span> <span style="color: #d0d0d0">=&gt;</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.setState({</span> <span style="color: #d0d0d0">fromChildText:</span> <span style="color: #d0d0d0">pText</span> <span style="color: #d0d0d0">});</span>
+  <span style="color: #d0d0d0">}</span>
 
-  render() {
-    return (
-      <span style="color: #007700">&lt;View</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">{{</span> <span style="color: #0000CC">flex:</span> <span style="color: #0000CC">1</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">justifyContent:</span> <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span><span style="color: #0000CC">center</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;,</span> <span style="color: #0000CC">alignItems:</span> <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span><span style="color: #0000CC">center</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;,</span> <span style="color: #0000CC">flexDirection:</span> <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span><span style="color: #0000CC">column</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;</span> <span style="color: #FF0000; background-color: #FFAAAA">}}</span><span style="color: #007700">&gt;</span>
-        <span style="color: #007700">&lt;Text&gt;</span>Changing parent&#39;s state value from child component<span style="color: #007700">&lt;/Text&gt;</span>
-        <span style="color: #007700">&lt;Text</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">{{</span> <span style="color: #0000CC">fontSize:</span> <span style="color: #0000CC">50</span> <span style="color: #FF0000; background-color: #FFAAAA">}}</span><span style="color: #007700">&gt;</span>{this.state.fromChildText}<span style="color: #007700">&lt;/Text&gt;</span>
-        <span style="color: #007700">&lt;Child</span> <span style="color: #0000CC">onPress=</span><span style="background-color: #fff0f0">{(pText)=</span><span style="color: #007700">&gt;</span>this._onPress(pText)} seed={this.state.fromChildText}/&gt;
-      <span style="color: #007700">&lt;/View&gt;</span>
-    );
-  }
-}
-</pre></div>
+  <span style="color: #d0d0d0">render()</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #d0d0d0">(</span>
+      <span style="color: #d0d0d0">&lt;View</span> <span style="color: #d0d0d0">style={{</span> <span style="color: #d0d0d0">flex:</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">justifyContent:</span> <span style="color: #ed9d13">&#39;center&#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">alignItems:</span> <span style="color: #ed9d13">&#39;center&#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">flexDirection:</span> <span style="color: #ed9d13">&#39;column&#39;</span> <span style="color: #d0d0d0">}}&gt;</span>
+        <span style="color: #d0d0d0">&lt;Text&gt;Changing</span> <span style="color: #d0d0d0">parent</span><span style="color: #a61717; background-color: #e3d2d2">&#39;</span><span style="color: #d0d0d0">s</span> <span style="color: #d0d0d0">state</span> <span style="color: #d0d0d0">value</span> <span style="color: #d0d0d0">from</span> <span style="color: #d0d0d0">child</span> <span style="color: #d0d0d0">component&lt;</span><span style="color: #a61717; background-color: #e3d2d2">/Text&gt;</span>
+        <span style="color: #d0d0d0">&lt;Text</span> <span style="color: #d0d0d0">style={{</span> <span style="color: #d0d0d0">fontSize:</span> <span style="color: #3677a9">50</span> <span style="color: #d0d0d0">}}&gt;{</span><span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.state.fromChildText}&lt;</span><span style="color: #a61717; background-color: #e3d2d2">/Text&gt;</span>
+        <span style="color: #d0d0d0">&lt;Child</span> <span style="color: #d0d0d0">onPress={(pText)=&gt;</span><span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">._onPress(pText)}</span> <span style="color: #d0d0d0">seed={</span><span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.state.fromChildText}/&gt;</span>
+      <span style="color: #d0d0d0">&lt;</span><span style="color: #a61717; background-color: #e3d2d2">/View&gt;</span>
+    <span style="color: #d0d0d0">);</span>
+  <span style="color: #d0d0d0">}</span>
+<span style="color: #d0d0d0">}</span>
+</pre></td></tr></table></div>
 
   </code>
 </pre>
@@ -50,31 +79,56 @@ export default class App extends Component<span style="color: #007700">&lt;Props
 ㅁ 자식컴포넌트 (Child.js)
 <pre>
 <code>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">import React, {Component} from &#39;react&#39;;
-import {
-  Platform, StyleSheet, Text, View,
-  TouchableOpacity
-} from &#39;react-native&#39;;
+<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">React,</span> <span style="color: #d0d0d0">{Component}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react&#39;</span><span style="color: #d0d0d0">;</span>
+<span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #d0d0d0">Platform,</span> <span style="color: #d0d0d0">StyleSheet,</span> <span style="color: #d0d0d0">Text,</span> <span style="color: #d0d0d0">View,</span>
+  <span style="color: #d0d0d0">TouchableOpacity</span>
+<span style="color: #d0d0d0">}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react-native&#39;</span><span style="color: #d0d0d0">;</span>
 
-type Props = {};
-export default class Child extends Component<span style="color: #007700">&lt;Props&gt;</span> {
-  render() {
-    return (
-      <span style="color: #007700">&lt;View&gt;</span>
-      <span style="color: #007700">&lt;TouchableOpacity</span> <span style="color: #0000CC">onPress=</span><span style="background-color: #fff0f0">{()=</span><span style="color: #007700">&gt;</span>this.props.onPress(this.props.seed + 10)}&gt;
-        <span style="color: #007700">&lt;View</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">{{</span> <span style="color: #0000CC">width:</span> <span style="color: #0000CC">200</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">height:</span> <span style="color: #0000CC">100</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">borderRadius:</span> <span style="color: #0000CC">10</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">borderWidth:</span> <span style="color: #0000CC">1</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">padding:</span> <span style="color: #0000CC">10</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #FF0000; background-color: #FFAAAA">}}</span><span style="color: #007700">&gt;</span>
-            <span style="color: #007700">&lt;Text</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">{{</span> <span style="color: #0000CC">fontSize:</span> <span style="color: #0000CC">20</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">textAlign:</span> <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span><span style="color: #0000CC">center</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;}}</span><span style="color: #007700">&gt;</span>ADD 10 TO PARENT&#39;s STATE VALUE<span style="color: #007700">&lt;/Text&gt;</span>
-        <span style="color: #007700">&lt;/View&gt;</span>
-      <span style="color: #007700">&lt;/TouchableOpacity&gt;</span>
-      <span style="color: #007700">&lt;TouchableOpacity</span> <span style="color: #0000CC">onPress=</span><span style="background-color: #fff0f0">{()=</span><span style="color: #007700">&gt;</span>this.props.onPress(this.props.seed - 10)}&gt;
-        <span style="color: #007700">&lt;View</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">{{</span> <span style="color: #0000CC">width:</span> <span style="color: #0000CC">200</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">height:</span> <span style="color: #0000CC">100</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">borderRadius:</span> <span style="color: #0000CC">10</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">borderWidth:</span> <span style="color: #0000CC">1</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">padding:</span> <span style="color: #0000CC">10</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #FF0000; background-color: #FFAAAA">}}</span><span style="color: #007700">&gt;</span>
-            <span style="color: #007700">&lt;Text</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">{{</span> <span style="color: #0000CC">fontSize:</span> <span style="color: #0000CC">20</span><span style="color: #FF0000; background-color: #FFAAAA">,</span> <span style="color: #0000CC">textAlign:</span> <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span><span style="color: #0000CC">center</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;}}</span><span style="color: #007700">&gt;</span>SUBSTRACT 10 TO PARENT&#39;s STATE VALUE<span style="color: #007700">&lt;/Text&gt;</span>
-        <span style="color: #007700">&lt;/View&gt;</span>
-      <span style="color: #007700">&lt;/TouchableOpacity&gt;</span>
-      <span style="color: #007700">&lt;/View&gt;</span>
-    );
-  }
-}
-</pre></div>
+<span style="color: #d0d0d0">type</span> <span style="color: #d0d0d0">Props</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">{};</span>
+<span style="color: #6ab825; font-weight: bold">export</span> <span style="color: #6ab825; font-weight: bold">default</span> <span style="color: #6ab825; font-weight: bold">class</span> <span style="color: #d0d0d0">Child</span> <span style="color: #6ab825; font-weight: bold">extends</span> <span style="color: #d0d0d0">Component&lt;Props&gt;</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #d0d0d0">render()</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #d0d0d0">(</span>
+      <span style="color: #d0d0d0">&lt;View&gt;</span>
+      <span style="color: #d0d0d0">&lt;TouchableOpacity</span> <span style="color: #d0d0d0">onPress={()=&gt;</span><span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.props.onPress(</span><span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.props.seed</span> <span style="color: #d0d0d0">+</span> <span style="color: #3677a9">10</span><span style="color: #d0d0d0">)}&gt;</span>
+        <span style="color: #d0d0d0">&lt;View</span> <span style="color: #d0d0d0">style={{</span> <span style="color: #d0d0d0">width:</span> <span style="color: #3677a9">200</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">height:</span> <span style="color: #3677a9">100</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">borderRadius:</span> <span style="color: #3677a9">10</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">borderWidth:</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">padding:</span> <span style="color: #3677a9">10</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">}}&gt;</span>
+            <span style="color: #d0d0d0">&lt;Text</span> <span style="color: #d0d0d0">style={{</span> <span style="color: #d0d0d0">fontSize:</span> <span style="color: #3677a9">20</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">textAlign:</span> <span style="color: #ed9d13">&#39;center&#39;</span><span style="color: #d0d0d0">}}&gt;ADD</span> <span style="color: #3677a9">10</span> <span style="color: #d0d0d0">TO</span> <span style="color: #d0d0d0">PARENT</span><span style="color: #ed9d13">&#39;s STATE VALUE&lt;/Text&gt;</span>
+<span style="color: #ed9d13">        &lt;/View&gt;</span>
+<span style="color: #ed9d13">      &lt;/TouchableOpacity&gt;</span>
+<span style="color: #ed9d13">      &lt;TouchableOpacity onPress={()=&gt;this.props.onPress(this.props.seed - 10)}&gt;</span>
+<span style="color: #ed9d13">        &lt;View style={{ width: 200, height: 100, borderRadius: 10, borderWidth: 1, padding: 10, }}&gt;</span>
+<span style="color: #ed9d13">            &lt;Text style={{ fontSize: 20, textAlign: &#39;</span><span style="color: #d0d0d0">center</span><span style="color: #ed9d13">&#39;}}&gt;SUBSTRACT 10 TO PARENT&#39;</span><span style="color: #d0d0d0">s</span> <span style="color: #d0d0d0">STATE</span> <span style="color: #d0d0d0">VALUE&lt;</span><span style="color: #a61717; background-color: #e3d2d2">/Text&gt;</span>
+        <span style="color: #d0d0d0">&lt;</span><span style="color: #a61717; background-color: #e3d2d2">/View&gt;</span>
+      <span style="color: #d0d0d0">&lt;</span><span style="color: #a61717; background-color: #e3d2d2">/TouchableOpacity&gt;</span>
+      <span style="color: #d0d0d0">&lt;</span><span style="color: #a61717; background-color: #e3d2d2">/View&gt;</span>
+    <span style="color: #d0d0d0">);</span>
+  <span style="color: #d0d0d0">}</span>
+<span style="color: #d0d0d0">}</span>
+</pre></td></tr></table></div>
+
   </code>
 </pre>
