@@ -12,36 +12,7 @@ an example for passing event &amp; params from child to parent
 ㅁ 부모컴포넌트 (App.js)
 <pre>
 <code>
-<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">React,</span> <span style="color: #d0d0d0">{Component}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react&#39;</span><span style="color: #d0d0d0">;</span>
+<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">React,</span> <span style="color: #d0d0d0">{Component}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react&#39;</span><span style="color: #d0d0d0">;</span>
 <span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">{Text,</span> <span style="color: #d0d0d0">View}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react-native&#39;</span><span style="color: #d0d0d0">;</span>
 <span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">Child</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;./Child&#39;</span><span style="color: #d0d0d0">;</span>
 
@@ -71,7 +42,7 @@ an example for passing event &amp; params from child to parent
     <span style="color: #d0d0d0">);</span>
   <span style="color: #d0d0d0">}</span>
 <span style="color: #d0d0d0">}</span>
-</pre></td></tr></table></div>
+</pre></div>
 
   </code>
 </pre>
@@ -79,31 +50,7 @@ an example for passing event &amp; params from child to parent
 ㅁ 자식컴포넌트 (Child.js)
 <pre>
 <code>
-<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">React,</span> <span style="color: #d0d0d0">{Component}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react&#39;</span><span style="color: #d0d0d0">;</span>
+<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">React,</span> <span style="color: #d0d0d0">{Component}</span> <span style="color: #d0d0d0">from</span> <span style="color: #ed9d13">&#39;react&#39;</span><span style="color: #d0d0d0">;</span>
 <span style="color: #6ab825; font-weight: bold">import</span> <span style="color: #d0d0d0">{</span>
   <span style="color: #d0d0d0">Platform,</span> <span style="color: #d0d0d0">StyleSheet,</span> <span style="color: #d0d0d0">Text,</span> <span style="color: #d0d0d0">View,</span>
   <span style="color: #d0d0d0">TouchableOpacity</span>
@@ -128,7 +75,7 @@ an example for passing event &amp; params from child to parent
     <span style="color: #d0d0d0">);</span>
   <span style="color: #d0d0d0">}</span>
 <span style="color: #d0d0d0">}</span>
-</pre></td></tr></table></div>
+</pre></div>
 
   </code>
 </pre>
